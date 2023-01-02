@@ -1,0 +1,8 @@
+{
+  "name": "CargaCredito",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

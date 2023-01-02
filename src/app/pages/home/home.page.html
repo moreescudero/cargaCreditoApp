@@ -1,0 +1,32 @@
+<ion-content noscroll>
+
+  <div class="visor">
+    
+    <h1 class="titulo">CRÉDITO ACTUAL</h1>
+    <p class="monto">${{this.credito}}</p>
+    <p>{{this.lectira}}</p>
+  </div>
+
+
+  <div class="centrado">
+    <ion-button class="escanear" expand="block" type="submit" fill="clear">
+      <span style="color: black;font-size: 1.7rem;" (click)="escanear()">ESCANEAR</span>
+    </ion-button>
+    <!-- <img src="../../../assets/iconpng.png" alt="" class="imagen">
+    <ion-icon name="warning-outline" style="width: 15rem; height: 3rem; background-color: rgba(240, 248, 255, 0.301); margin-top: 0.2rem; border-radius: 10px;" (click)="reiniciarSaldo()" color="light"></ion-icon> -->
+  </div>
+
+  <ion-grid style="display: flex; flex-flow: column; margin-top: 1rem;">
+    <ion-row style="flex-grow: 1;">
+      <ion-col size="2">
+          <ion-icon name="trash-sharp" style="width: 3rem; height: 3rem; background-color: rgb(255, 0, 0); margin-top: 0.2rem; border-radius: 10px;" (click)="reiniciarSaldo()" color="light"></ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        <ion-button class="botones" expand="block" color="tertiary" type="submit" (click)="logOut()" style=" height: 3rem;">
+          <ion-text color="dark"> Cerrar Sesión </ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-spinner *ngIf="apretado" color="warning" name="crescent" style="display: inherit; margin:auto;width: 4cm; height: 4cm; margin-top: 2rem;"></ion-spinner>
+</ion-content>

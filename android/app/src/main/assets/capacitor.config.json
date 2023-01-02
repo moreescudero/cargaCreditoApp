@@ -1,0 +1,12 @@
+{
+	"appId": "io.ionic.starter6",
+	"appName": "Carga Credito",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false,
+			"showSpinner": false
+		}
+	}
+}
