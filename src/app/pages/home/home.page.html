@@ -12,6 +12,8 @@
     <ion-button class="escanear" expand="block" type="submit" fill="clear">
       <span style="color: black;font-size: 1.7rem;" (click)="escanear()">ESCANEAR</span>
     </ion-button>
+    <zxing-scanner *ngIf="scannerEnabled" #scanner (scanSuccess)="scanSuccessHandler($event)">
+    </zxing-scanner>
     <!-- <img src="../../../assets/iconpng.png" alt="" class="imagen">
     <ion-icon name="warning-outline" style="width: 15rem; height: 3rem; background-color: rgba(240, 248, 255, 0.301); margin-top: 0.2rem; border-radius: 10px;" (click)="reiniciarSaldo()" color="light"></ion-icon> -->
   </div>
@@ -27,6 +29,6 @@
         </ion-button>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> 
   <ion-spinner *ngIf="apretado" color="warning" name="crescent" style="display: inherit; margin:auto;width: 4cm; height: 4cm; margin-top: 2rem;"></ion-spinner>
 </ion-content>

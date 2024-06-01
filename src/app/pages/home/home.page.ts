@@ -18,7 +18,10 @@ export class HomePage implements OnInit {
   usuario : any;
 
   lectira : any;
-  
+
+  public scannerEnabled: boolean = false;
+  public information: string = "No se  detectado información de ningún código. Acerque un código QR para escanear.";
+
   qr10 : string = '8c95def646b6127282ed50454b73240300dccabc';
   qr50 : string = 'ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172';
   qr100 : string = '2786f4877b9091dcad7f35751bfcf5d5ea712b2f';
@@ -40,6 +43,19 @@ export class HomePage implements OnInit {
         }
       }
     });
+  }
+  public scanSuccessHandler($event: any) {
+    this.scannerEnabled = false;
+    this.information = "Espera recuperando información... ";
+
+    this.information = $event;
+    console.log(this.information);
+    this.verificarSaldo(this.information);
+  }
+
+  public enableScanner() {
+    this.scannerEnabled = !this.scannerEnabled;
+    this.information = "No se  detectado información de ningún código. Acerque un código QR para escanear.";
   }
 
   escanear(){
